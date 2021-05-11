@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LivreController!{% endblock %}
+
+{% block body %}
+{# Afficher la liste des livres dans une table HTML #}
+			
+		{# ma version de l'exo j'arrive a recupéré la valeur mais la mise n forme n'est pas bonne
+        {% for indice,valeur in livres %}
+           <th>{{ valeur.id }}</th>
+            <td>{{ valeur.auteur }}</td>
+           <td>{{ valeur.titre }}</td>
+		{% endfor %} #}
+
+        
+
+
+
+
+
+{# CORRECTION  Affichez la liste des livres dans un table HTML #}
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for livre in livres %}{# {% for livre in livres %}{# // pour chaque livre dans la liste des livres (tableau) #}
+            <tr>
+                <td>{{ livre.id }}</td>
+                <td>{{ livre.titre }}</td>
+                <td>{{ livre.auteur }}</td>
+                <td>
+                {# la fonction 'path()' retourne l'url relative basé sur la route dont on passe le name en paramètre 
+                ci dessous on a passer le name de la route en paramètre soit livre_modifier 
+                #}
+                <a href="{{path("livre_modifier" , {id : livre.id}) }}"><i class="fa fa-edit"></i></a>
+                 <a href="{{path("livre_supprimer" , {id : livre.id}) }}"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+    <tfoot>
+        <th colspan=2>Nombre de livres :</th>
+        <td>{{ livres|length }}</td>
+    </tfoot>
+</table>
+
+{% endblock %}

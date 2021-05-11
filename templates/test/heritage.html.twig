@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+
+	{% block body %}
+
+		<h2>page test/heritage</h2>
+		<p>Le contenu du block body du fichier heritage remplace le contenu du block body du fichier base.html.twig</p>
+
+	{% endblock %}
+
+	{% block title %}Héritage
+	{% endblock %}
+
+    {% block titreH1 %}Héritage{% endblock %}
+
+	{# EXO changez le contenu de la balise h1 pour cette page : Héritage
+	Mais le texte "Bienvenue à la bibliothèque doit toujours apparaitre pour la route /test/accueil #}

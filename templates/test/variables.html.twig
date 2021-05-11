@@ -1,0 +1,59 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	{# tableau associatif #}
+	{#  #}
+		<ul>
+        <li>Jour :  {{tableau["jour"]}}</li>{# première façon d'ecrire  #}
+        <li>Mois :  {{tableau.mois}}</li>{# autre façon d'ecrire  plus simple #}
+        <li>Année :  {{tableau.annee}}</li>
+	</ul>
+
+
+	{# tableau avec indice numérique #}
+	{#  #}
+	 <ul>
+        <li>Jour : {{ tableau2[0] }}</li>
+        <li>Mois : {{ tableau2[1] }}</li>
+        <li>Année : {{ tableau2[2] }}</li>
+	</ul> 
+
+
+	{# BOUCLE FOR   --que celle la dans twig #}
+
+		{% for i in 0..2 %}
+		{{ tableau2[i] }}
+		{% endfor %}
+
+			<ul>
+				{% for indice,valeur in tableau %}
+
+                <li>{{indice}}:{{ valeur }}</li>
+
+		{% endfor %}
+	</ul>
+
+{# IF #}
+{% if nombre > 2  %}
+    Le nombre est supérieur à 2
+{% elseif nombre < 10 %}
+    Le nombre est compris entre 2 et 9
+{% else %}
+    le nombre est superieur ou égal à 10
+{% endif %}
+
+{# TEST #}
+{% if chaine is defined %}{# c'est un isset en php gros  #}
+{{chaine}}
+{% endif %}
+
+{# ⚠ pour faire le raaccourci emoji windows + . ou + ; #}
+{# ⚠ en twig,le test 'is empty' ne peut ètre fait que sur une variable qui existe  #}
+{% if chaine is defined and chaine is empty %}
+    <p>La chaine est vide</p>
+{% endif %}
+
+{# FILTRES voir la doc twig #}
+{{tableau.mois|upper}}
+
+{% endblock %}

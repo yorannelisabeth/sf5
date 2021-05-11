@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <div class="card_deck">
+        {% for livre in livres %}
+            {{include("livre/vignette.html.twig")}}    
+
+            {# autre facon de faire si on veut passer une nouvelle variable 
+                 {% for l in livres %}
+                {{include("livre/vignette.html.twig",{livre: l})}}  
+            #}
+            
+        {% endfor %}
+    </div>
+
+{% endblock %}
