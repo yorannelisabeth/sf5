@@ -105,8 +105,13 @@ symfony console make:entity   Livre
 pour recupérer et installer un projet symfony 
 -composer install 
 
+Résumer crud  lundi 17/05/2021 9h30
 
+------------------------------------------
 
+correction exercice 10h05 le 17/05/2021 
+
+------------------------------------------------
 auto indentation au moment de la sauvegarde
 
 ok
