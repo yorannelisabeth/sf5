@@ -88,8 +88,18 @@ pour les connexion et creation compte géré l'autentification
     installer une barre de debug pour les developpeur
         - composer require debug --dev
     
+le 12/05/2021 9h30 récapitulatif formulaire de connexion et création d'utilisateur 
+
+Pour faire du crud :
+    -sympfony console make:crud
+    //(Abonne) (AbonneController)
 
 
+symfony console make:entity   Categorie  
+// 12h35 le 12/05/2021
+
+symfony console make:entity   Livre     
+// 12h37 le 12/05/2021 ici on voulait rajouter un champ donc on utilise la meme commande pour ajouter un champ
 
 
 pour recupérer et installer un projet symfony 

@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
   <a class="navbar-brand" href="#">Biblio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,10 +15,11 @@
       {# Dans les fichiers Twig, on peut accéder à une variable globale 'app'.
           app.user : si app.user est non null, contient une objet user (classe Abonne) qui contient les informations de l'utilisateur connecté #}
 
-      {% if app.user %}
+     {% if is_granted("IS_AUTHENTICATED_FULLY") %}{% endif %} {# {% if app.user %} #}
+      	{# si c'est null on sort de la première condition mais si ce n'est pas nul on entre dans la première condition #}
         <li class="nav-item">
-          <a class="nav-link" href="{{ path("app_logout") }}">
-            <i class="fa fa-sign-out-alt"></i>
+          <a class="nav-link" href="">
+            <i class="fa fa-user"></i> {{app.user.username}}{# {{app.user.pseudo}} #}
           </a>
         </li>
       {% else %}
@@ -37,6 +44,26 @@
             <a class="dropdown-item" href="{{ path("livre_nouveau") }}">Nouveau livre</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Abonnés
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("abonne_index") }}">Liste</a>
+            <a class="dropdown-item" href="{{ path("abonne_new") }}">Nouvel abonné</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Catégories
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("categorie_index") }}">Liste</a>
+            <a class="dropdown-item" href="{{ path("categorie_new") }}">Nouvelle catégorie</a>
           </div>
         </li>
       {% endif %}

@@ -1,0 +1,16 @@
+AFFICHEZ les roles sur la liste des abonnées de la façon suivante
+
+
+
+
+exo 16h50 le 12/05/2021
+
+Dans le menu
+    ajoutez un lien de menu qui ne s'affiche que lorsque l'on est connecté
+    affichez le pseudo de l'utilisateur connecté dans ce lien
+
+
+pdf
+
+ date emprutn ne peut pas ètre nul 
+mais date retour oui 

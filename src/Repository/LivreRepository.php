@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Entity\Livre;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use App\Repository\LivreRepository;
+
 /**
  * @method Livre|null find($id, $lockMode = null, $lockVersion = null)
  * @method Livre|null findOneBy(array $criteria, array $orderBy = null)

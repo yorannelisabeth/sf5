@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Abonne index {% endblock %}
+
+{% block body %}
+    <h1>Abonne index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pseudo</th>
+                <th>Roles</th>
+                <th>Password</th>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for abonne in abonnes %}
+            <tr>
+            
+                <td>{{ abonne.id }}</td> {# sa correspond a un getter sous php : <?= $abonne->id ?> #}
+                <td>{{ abonne.pseudo }}</td>
+                <td>
+                {% set texte = "" %}
+                {% for role in abonne.roles %}
+                        {% if role == "ROLE_ADMIN" %}
+
+                        {% set texte = texte ~ (texte ? "," : "") ~ "Directeur" %} 
+                        {# explication a 11:13 le 12/05/2021  #}
+                           
+                    {% elseif role == "ROLE_BIBLIO" %}
+                          {% set texte = texte ~ (texte ? "," : "") ~ "Biblio" %} 
+                    {% elseif role == "ROLE_LECTEUR" %}
+                            {% set texte = texte ~ (texte ? "," : "") ~ "Lecteur" %} 
+                                
+                        {% endif %}
+                    
+                    {% endfor %}
+                    
+                    {{texte}}
+                
+                </td>
+                {# <td>{{ abonne.password }}</td> #}
+                <td>{{ abonne.prenom }}</td>
+                <td>{{ abonne.nom }}</td>
+                <td>
+                    <a href="{{ path('abonne_show', {'id': abonne.id}) }}">show</a>
+                    <a href="{{ path('abonne_edit', {'id': abonne.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('abonne_new') }}">Create new</a>
+{% endblock %}
