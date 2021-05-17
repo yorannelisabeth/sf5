@@ -15,7 +15,7 @@
       {# Dans les fichiers Twig, on peut accéder à une variable globale 'app'.
           app.user : si app.user est non null, contient une objet user (classe Abonne) qui contient les informations de l'utilisateur connecté #}
 
-     {% if is_granted("IS_AUTHENTICATED_FULLY") %}{% endif %} {# {% if app.user %} #}
+     {% if is_granted("IS_AUTHENTICATED_FULLY") %}{# {% if app.user %} #}
       	{# si c'est null on sort de la première condition mais si ce n'est pas nul on entre dans la première condition #}
         <li class="nav-item">
           <a class="nav-link" href="">
