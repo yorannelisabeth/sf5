@@ -112,6 +112,63 @@ Résumer crud  lundi 17/05/2021 9h30
 correction exercice 10h05 le 17/05/2021 
 
 ------------------------------------------------
+GESTION DU FRONT
+-------------------------------------------
+16h30 17/05/2021
+Installation de yarn : https://classic.yarnpkg.com/en/docs/install#windows-stable 
+dans le dossier du projet dans me powershell
+- composer require encore
+- yarn install
+
+pour compilé le css
+- yarn add node-sass 
+- yarn add sass-loader
+
+pour bootsrap
+- yarn add bootstrap // installera la dernière version stable
+- yarn add jquery // pour bootsrap qui a forcement besoin de jquery
+- yarn add popper.js      //sa permet de géré les pop up
+
+pour les fonts
+yarn add @fortawesome/fontawesome-free
+
+decommenter la ligne 59 (.enableSassLoader()) et 72 (.autoProvidejQuery()) dans webpack.config.js pour pouvoir utiliser bootsrap
+
+renommer le fichier app.css en app.scss dans le dossier assets puis ajouter les imports
+
+ne aps oublier de renommer dans app.js 
+import './styles/app.css'  en ==> import './styles/app.scss';     en gros le scss
+
+puis dans ce même fichier ajouter ces ligne de code :
+
+const $ = require("jquery");
+global.$= global.jQuery = $;
+window.Popper = require("popper.js");
+require("bootstrap");
+
+
+
+et supprimer cette ligne :
+// start the Stimulus application
+import './bootstrap';
+
+---------------------------------
+suite
+--------------------------------------------------
+
+deux possibilité soit dans un premier temps on retire la version que l'on ne veut pas en faisant
+- yarn remove bootstrap 
+
+puis / ou/ on fait direct sans supprimer avant ( dernière option a tester 😊 )
+- yarn add bootstrap@^4.6   // ici on ajoute la version de bootstrap souhaiter
+
+puis
+- yarn encore dev
+
+
+
+losrque l'on récupère un projet on fait un yarn install pour recupérer les nodemodules
+
 auto indentation au moment de la sauvegarde
 
 ok
