@@ -13,3 +13,4 @@ global.$= global.jQuery = $;
 window.Popper = require("popper.js");
 require("bootstrap");
 
+// A partir d'ici je peux ecrire mon code js 

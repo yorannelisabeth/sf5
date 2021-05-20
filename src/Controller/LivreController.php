@@ -37,9 +37,11 @@ class LivreController extends AbstractController
     //EN gros findall() c'est comme le SELECT * FROM
     {
         $livres = $livreRepository->findAll();
+        $livresNonDisponibles=$livreRepository->LivresNonDisponibles();
 
         return $this->render('livre/index.html.twig', [
-            'livres' => $livres
+            'livres' => $livres,
+            "livres_non_disponibles" => $livresNonDisponibles
         ]);
     }
 

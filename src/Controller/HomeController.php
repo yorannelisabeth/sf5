@@ -21,7 +21,11 @@ class HomeController extends AbstractController
 */
 
         return $this->render('home/index.html.twig', [
-            'livres' => $lr->findAll()
+            'livres' => $lr->findAll(),
+            'livres_non_disponibles' => $lr->LivresNonDisponibles()
         ]);
     }
 }
+
+/*EXO : vous devez empêcher de pouvoir emprunter un livre s'il n'est pas disponible
+(cacher le lien ne suffit pas) */

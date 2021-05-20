@@ -31,7 +31,7 @@ function accueil()
     {
 
     $nombre = 45;
-    $prenom = "Roger";
+    $prenom = "Pierre";
     return $this->render("base.html.twig", ["nombre" => $nombre, "prenom" => $prenom]);
 }
 

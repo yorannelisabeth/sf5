@@ -166,8 +166,42 @@ puis
 - yarn encore dev
 
 
+/--------------------09h49 le 18/05/2021------------------------------------/
+pour mettre en production 
+- yarn encore prod
 
-losrque l'on récupère un projet on fait un yarn install pour recupérer les nodemodules
+
+/--------------a chaque fois que l'on fait une modification css etc on fait cette commande
+- yarn encore dev 
+/--------------------------ou sinon le faire de façon automatique grace a 
+- voir la commande durant le cours du 18/05/2021 10h              
+le terminal sera bloquer donc ouvrir a côté un autre terminal 
+
+
+pour le PROJET
+pour geré les conecté on fait
+make:user   
+make:entity (pour ajouter des champ des propriété à la classe Entity\User)
+make:auth (authentification) le faire avant de créée l'inscription
+make:registration-form (inscription)
+
+pour le formulaire pour mettre les champ dans l'ordre que l'on veut regarder le cours a 10h10 le 19/05/2021
+
+
+symfony console doctrine:database:create
+pour crré la base de donné par default
+
+pour ajouter en local des element nouveau d'une bdd d'une branch distante par exemple
+php bin/console doctrine:migrations:migrate
+
+
+pour annuler une migration : 
+
+symfony server:start -d
+
+
+losrque l'on récupère un projet on fait un -yarn install pour recupérer les nodemodules
+puis un - composer install
 
 auto indentation au moment de la sauvegarde
 
