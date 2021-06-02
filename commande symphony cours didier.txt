@@ -1,5 +1,5 @@
    
-   
+   ne pas envoyer ces migration lors d'un push / si jamais c'est fait supprimer toute les migration existante en local et distant puis refaire les commande de make:migrate puis migration migrate
    
    - server:ca:install
     - require maker --dev
@@ -146,6 +146,7 @@ global.$= global.jQuery = $;
 window.Popper = require("popper.js");
 require("bootstrap");
 
+symfony server:list pour voir si il y a d'autre serveur ouvert en même temps
 
 
 et supprimer cette ligne :
